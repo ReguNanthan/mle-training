@@ -1,0 +1,19 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "files.trimFinalNewlines": true,
+    "python.sortImports.args": [
+        "--profile",
+        "black"
+    ],
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "python.linting.flake8Args": [
+        "--ignore=E402,E501"
+    ]
+}
