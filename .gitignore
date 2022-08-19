@@ -1,0 +1,8 @@
+#Ignore the bash script file
+script.sh
+*.pkl
+*.csv
+*.tgz
+*.pyc
+#Ignore the data folder
+/data

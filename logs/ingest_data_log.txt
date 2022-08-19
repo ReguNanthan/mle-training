@@ -1,0 +1,63 @@
+Fetching housing data.
+Loading housing data.
+splitting the dataset
+Downloading the strat_train_set and strat_test_set
+Downloading the train_set and test_set
+Downloading housing labels dataset
+Downloading housing prepared dataset
+Fetching housing data.
+Loading housing data.
+Splitting the dataset
+Downloading the strat_train_set and strat_test_set
+Downloading the train_set and test_set
+Downloading housing labels dataset
+Downloading housing prepared dataset
+Fetching housing data.
+Loading housing data.
+Splitting the dataset
+Downloading the strat_train_set and strat_test_set
+Downloading the train_set and test_set
+Downloading housing labels dataset
+Downloading housing prepared dataset
+Fetching housing data.
+Loading housing data.
+Splitting the dataset
+Downloading the strat_train_set and strat_test_set
+Downloading the train_set and test_set
+Downloading housing labels dataset
+Downloading housing prepared dataset
+Fetching housing data.
+Loading housing data.
+Splitting the dataset
+Downloading the strat_train_set and strat_test_set
+Downloading the train_set and test_set
+Downloading housing labels dataset
+Downloading housing prepared dataset
+Fetching housing data.
+Loading housing data.
+Splitting the dataset
+Downloading the strat_train_set and strat_test_set
+Downloading the train_set and test_set
+Downloading housing labels dataset
+Downloading housing prepared dataset
+Fetching housing data.
+Loading housing data.
+Splitting the dataset
+Downloading the strat_train_set and strat_test_set
+Downloading the train_set and test_set
+Downloading housing labels dataset
+Downloading housing prepared dataset
+Fetching housing data.
+Loading housing data.
+Splitting the dataset
+Downloading the strat_train_set and strat_test_set
+Downloading the train_set and test_set
+Downloading housing labels dataset
+Downloading housing prepared dataset
+Fetching housing data.
+Loading housing data.
+Splitting the dataset
+Downloading the strat_train_set and strat_test_set
+Downloading the train_set and test_set
+Downloading housing labels dataset
+Downloading housing prepared dataset
