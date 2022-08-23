@@ -153,7 +153,6 @@
 <span class="kn">from</span> <span class="nn">logger</span> <span class="kn">import</span> <span class="n">configure_logger</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
-<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
 
 
 <div class="viewcode-block" id="parse_arguments"><a class="viewcode-back" href="../../HousePricePrediction.html#HousePricePrediction.score.parse_arguments">[docs]</a><span class="k">def</span> <span class="nf">parse_arguments</span><span class="p">():</span>
@@ -226,38 +225,10 @@
     <span class="n">log_file_path</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">log_file</span>
     <span class="n">logging</span> <span class="o">=</span> <span class="n">configure_logger</span><span class="p">(</span><span class="n">log_file</span><span class="o">=</span><span class="n">log_file_path</span><span class="p">,</span> <span class="n">console</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">log_level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>
 
-    <span class="n">strat_test_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">processed_path</span><span class="p">,</span> <span class="s2">&quot;strat_test_set.csv&quot;</span><span class="p">))</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Downloading the Xtest and Ytest from processed path folder&quot;</span><span class="p">)</span>
 
-    <span class="n">strat_test_set</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;income_cat&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="c1"># strat_test_set.drop(&#39;Unnamed: 0&#39;, axis=1, inplace=True)</span>
-    <span class="c1"># print(strat_test_set.columns)</span>
-    <span class="c1"># Loading model to compare the results</span>
-    <span class="c1"># final_model = pickle.load(open(os.path.join(model_path,&#39;final_model.pkl&#39;),&#39;rb&#39;))</span>
-
-    <span class="n">X_test</span> <span class="o">=</span> <span class="n">strat_test_set</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">y_test</span> <span class="o">=</span> <span class="n">strat_test_set</span><span class="p">[</span><span class="s2">&quot;median_house_value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-    <span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;median&quot;</span><span class="p">)</span>
-
-    <span class="n">X_test_num</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;ocean_proximity&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">imputer</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_test_num</span><span class="p">)</span>
-    <span class="n">X_test_prepared</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test_num</span><span class="p">)</span>
-    <span class="n">X_test_prepared</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
-        <span class="n">X_test_prepared</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">X_test_num</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">X_test</span><span class="o">.</span><span class="n">index</span>
-    <span class="p">)</span>
-    <span class="n">X_test_prepared</span><span class="p">[</span><span class="s2">&quot;rooms_per_household&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">X_test_prepared</span><span class="p">[</span><span class="s2">&quot;total_rooms&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">X_test_prepared</span><span class="p">[</span><span class="s2">&quot;households&quot;</span><span class="p">]</span>
-    <span class="p">)</span>
-    <span class="n">X_test_prepared</span><span class="p">[</span><span class="s2">&quot;bedrooms_per_room&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">X_test_prepared</span><span class="p">[</span><span class="s2">&quot;total_bedrooms&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">X_test_prepared</span><span class="p">[</span><span class="s2">&quot;total_rooms&quot;</span><span class="p">]</span>
-    <span class="p">)</span>
-    <span class="n">X_test_prepared</span><span class="p">[</span><span class="s2">&quot;population_per_household&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">X_test_prepared</span><span class="p">[</span><span class="s2">&quot;population&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">X_test_prepared</span><span class="p">[</span><span class="s2">&quot;households&quot;</span><span class="p">]</span>
-    <span class="p">)</span>
-
-    <span class="n">X_test_cat</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[[</span><span class="s2">&quot;ocean_proximity&quot;</span><span class="p">]]</span>
-    <span class="n">X_test_prepared</span> <span class="o">=</span> <span class="n">X_test_prepared</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">X_test_cat</span><span class="p">,</span> <span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="n">X_test_prepared</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">processed_path</span><span class="p">,</span> <span class="s2">&quot;xtest_prepared.csv&quot;</span><span class="p">))</span>
+    <span class="n">y_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">processed_path</span><span class="p">,</span> <span class="s2">&quot;y_test_prepared.csv&quot;</span><span class="p">))</span>
 
     <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Unpickling the final model&quot;</span><span class="p">)</span>
 
