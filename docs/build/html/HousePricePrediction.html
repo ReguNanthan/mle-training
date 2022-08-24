@@ -90,7 +90,7 @@
 <li><a class="reference internal" href="#module-HousePricePrediction.ingest_data">HousePricePrediction.ingest_data module</a></li>
 <li><a class="reference internal" href="#module-HousePricePrediction.logger">HousePricePrediction.logger module</a></li>
 <li><a class="reference internal" href="#module-HousePricePrediction.score">HousePricePrediction.score module</a></li>
-<li><a class="reference internal" href="#module-HousePricePrediction.train">HousePricePrediction.train module</a></li>
+<li><a class="reference internal" href="#housepriceprediction-train-module">HousePricePrediction.train module</a></li>
 <li><a class="reference internal" href="#module-HousePricePrediction">Module contents</a></li>
 </ul>
 </li>
@@ -262,6 +262,11 @@ being actively worked upon.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.main">
+<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.ingest_data.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="HousePricePrediction.ingest_data.parse_arguments">
 <span class="sig-prename descclassname"><span class="pre">HousePricePrediction.ingest_data.</span></span><span class="sig-name descname"><span class="pre">parse_arguments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#parse_arguments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.parse_arguments" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to parse the arguments</p>
@@ -342,15 +347,18 @@ default - <cite>“DEBUG”</cite></p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="HousePricePrediction.score.predict">
-<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.score.</span></span><span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/score.html#predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.score.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to predict the output and score</p>
+<dt class="sig sig-object py" id="HousePricePrediction.score.predict_score">
+<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.score.</span></span><span class="sig-name descname"><span class="pre">predict_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/score.html#predict_score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.score.predict_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that predict and return the scores of a ML model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None</strong> – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_name</strong> (<em>str</em>) – Name of the model that needs to evaluated.</p></li>
+<li><p><strong>model</strong> (<em>object</em>) – model object</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if successful, False otherwise.</p>
+<dd class="field-even"><p>Returns True if successful, otherwise False.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
@@ -359,42 +367,8 @@ default - <cite>“DEBUG”</cite></p></li>
 </dd></dl>
 
 </section>
-<section id="module-HousePricePrediction.train">
-<span id="housepriceprediction-train-module"></span><h2>HousePricePrediction.train module<a class="headerlink" href="#module-HousePricePrediction.train" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="HousePricePrediction.train.parse_arguments">
-<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.train.</span></span><span class="sig-name descname"><span class="pre">parse_arguments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/train.html#parse_arguments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.train.parse_arguments" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to parse the arguments</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Returns the arguments that are added in the argument parser</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Args</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="HousePricePrediction.train.train_models">
-<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.train.</span></span><span class="sig-name descname"><span class="pre">train_models</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/train.html#train_models"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.train.train_models" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to train the models.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if successful, False otherwise.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="housepriceprediction-train-module">
+<h2>HousePricePrediction.train module<a class="headerlink" href="#housepriceprediction-train-module" title="Permalink to this heading">¶</a></h2>
 </section>
 <section id="module-HousePricePrediction">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-HousePricePrediction" title="Permalink to this heading">¶</a></h2>

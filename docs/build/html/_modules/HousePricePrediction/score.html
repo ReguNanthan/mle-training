@@ -152,7 +152,9 @@
 
 <span class="kn">from</span> <span class="nn">logger</span> <span class="kn">import</span> <span class="n">configure_logger</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_absolute_error</span>
+
+<span class="kn">import</span> <span class="nn">mlflow</span>
 
 
 <div class="viewcode-block" id="parse_arguments"><a class="viewcode-back" href="../../HousePricePrediction.html#HousePricePrediction.score.parse_arguments">[docs]</a><span class="k">def</span> <span class="nf">parse_arguments</span><span class="p">():</span>
@@ -200,19 +202,23 @@
     <span class="k">return</span> <span class="n">args</span></div>
 
 
-<div class="viewcode-block" id="predict"><a class="viewcode-back" href="../../HousePricePrediction.html#HousePricePrediction.score.predict">[docs]</a><span class="k">def</span> <span class="nf">predict</span><span class="p">():</span>
+<div class="viewcode-block" id="predict_score"><a class="viewcode-back" href="../../HousePricePrediction.html#HousePricePrediction.score.predict_score">[docs]</a><span class="k">def</span> <span class="nf">predict_score</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
 
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Function to predict the output and score</span>
+    <span class="sd">&quot;&quot;&quot;Function that predict and return the scores of a ML model.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    None</span>
+<span class="sd">    model_name  : str</span>
+<span class="sd">        Name of the model that needs to evaluated.</span>
+
+<span class="sd">    model : object</span>
+<span class="sd">        model object</span>
+
 
 <span class="sd">    Returns</span>
-<span class="sd">    -------</span>
+<span class="sd">    --------</span>
 <span class="sd">    bool</span>
-<span class="sd">        True if successful, False otherwise.</span>
+<span class="sd">        Returns True if successful, otherwise False.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -230,23 +236,48 @@
     <span class="n">X_test_prepared</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">processed_path</span><span class="p">,</span> <span class="s2">&quot;xtest_prepared.csv&quot;</span><span class="p">))</span>
     <span class="n">y_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">processed_path</span><span class="p">,</span> <span class="s2">&quot;y_test_prepared.csv&quot;</span><span class="p">))</span>
 
-    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Unpickling the final model&quot;</span><span class="p">)</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unpickling the </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> model&quot;</span><span class="p">)</span>
 
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;final_model.pkl&quot;</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handle</span><span class="p">:</span>
-        <span class="n">final_model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_handle</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s2">&quot;Linear Regressor&quot;</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;linear_reg_model.pkl&quot;</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span>
+        <span class="p">)</span> <span class="k">as</span> <span class="n">file_handle</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_handle</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s2">&quot;Decision Tree Regressor&quot;</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;DecisionTree_reg_model.pkl&quot;</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span>
+        <span class="p">)</span> <span class="k">as</span> <span class="n">file_handle</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_handle</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">model_name</span> <span class="o">==</span> <span class="s2">&quot;RandomSearch RandomForest Regressor&quot;</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;RandomSearch_RandomForest_Model.pkl&quot;</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span>
+        <span class="p">)</span> <span class="k">as</span> <span class="n">file_handle</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_handle</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;final_model.pkl&quot;</span><span class="p">),</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_handle</span><span class="p">:</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_handle</span><span class="p">)</span>
+            <span class="n">model_name</span> <span class="o">=</span> <span class="s2">&quot;GridSearchCV RandomForest Regressor&quot;</span>
 
-    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Prediction using Final Model&quot;</span><span class="p">)</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediction using </span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
 
-    <span class="n">final_predictions</span> <span class="o">=</span> <span class="n">final_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_prepared</span><span class="p">)</span>
-    <span class="n">final_mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">final_predictions</span><span class="p">)</span>
-    <span class="n">final_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">final_mse</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;final model rmse&quot;</span><span class="p">,</span> <span class="n">final_rmse</span><span class="p">)</span>
+    <span class="n">housing_predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_prepared</span><span class="p">)</span>
+    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">housing_predictions</span><span class="p">)</span>
+    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">housing_predictions</span><span class="p">)</span>
+    <span class="n">mse</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">housing_predictions</span><span class="p">)</span>
+
+    <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mse</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2"> rmse&quot;</span><span class="p">,</span> <span class="n">rmse</span><span class="p">)</span>
+
+    <span class="n">mlflow</span><span class="o">.</span><span class="n">log_metric</span><span class="p">(</span><span class="s2">&quot;rmse&quot;</span><span class="p">,</span> <span class="n">rmse</span><span class="p">)</span>
+    <span class="n">mlflow</span><span class="o">.</span><span class="n">log_metric</span><span class="p">(</span><span class="s2">&quot;r2&quot;</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>
+    <span class="n">mlflow</span><span class="o">.</span><span class="n">log_metric</span><span class="p">(</span><span class="s2">&quot;mae&quot;</span><span class="p">,</span> <span class="n">mae</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="kc">True</span></div>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">predict</span><span class="p">()</span>
+    <span class="n">predict_score</span><span class="p">(</span><span class="s2">&quot;RandomSearch RandomForest Regressor&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="c1"># main()</span>
 </pre></div>
 
            </div>

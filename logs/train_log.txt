@@ -46,3 +46,166 @@ Building DecisionTreeRegressor model
 Saving the DecisionTreeRegressor model
 Final model obtained using grid_search.best_estimator_
 Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Saving the RandomSearch_RandomForest_Model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Saving the RandomSearch_RandomForest_Model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Saving the RandomSearch_RandomForest_Model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Final model obtained using grid_search.best_estimator_
+Saving the final model

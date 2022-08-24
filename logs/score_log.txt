@@ -26,3 +26,129 @@ Prediction using Final Model
 Downloading the Xtest and Ytest from processed path folder
 Unpickling the final model
 Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'squared_error', 'max_depth': None, 'max_features': 8, 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 30, 'n_jobs': None, 'oob_score': False, 'random_state': 42, 'verbose': 0, 'warm_start': False}
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the final model
+Prediction using Final Model {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'squared_error', 'max_depth': None, 'max_features': 8, 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 30, 'n_jobs': None, 'oob_score': False, 'random_state': 42, 'verbose': 0, 'warm_start': False}
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Linear Regression model
+Prediction using linear_reg_model
+Unpickling the DecisionTree_reg_model.pkl
+Prediction using DecisionTree_reg_model
+Unpickling the RandomSearch_RandomForest_Model model
+Prediction using RandomSearch_RandomForest_Model
+Unpickling the final model
+Prediction using Final Model {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'squared_error', 'max_depth': None, 'max_features': 8, 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 30, 'n_jobs': None, 'oob_score': False, 'random_state': 42, 'verbose': 0, 'warm_start': False}
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Linear Regression model
+Prediction using linear_reg_model
+Unpickling the DecisionTree_reg_model.pkl
+Prediction using DecisionTree_reg_model
+Unpickling the RandomSearch_RandomForest_Model model
+Prediction using RandomSearch_RandomForest_Model
+Unpickling the final model
+Prediction using Final Model {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'squared_error', 'max_depth': None, 'max_features': 8, 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 30, 'n_jobs': None, 'oob_score': False, 'random_state': 42, 'verbose': 0, 'warm_start': False}
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Linear Regression model
+Prediction using linear_reg_model
+Unpickling the DecisionTree_reg_model.pkl
+Prediction using DecisionTree_reg_model
+Unpickling the RandomSearch_RandomForest_Model model
+Prediction using RandomSearch_RandomForest_Model
+Unpickling the final model
+Prediction using Final Model {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'squared_error', 'max_depth': None, 'max_features': 8, 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 30, 'n_jobs': None, 'oob_score': False, 'random_state': 42, 'verbose': 0, 'warm_start': False}
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Linear Regression model
+Prediction using linear_reg_model
+Unpickling the DecisionTree_reg_model.pkl
+Prediction using DecisionTree_reg_model
+Unpickling the RandomSearch_RandomForest_Model model
+Prediction using RandomSearch_RandomForest_Model
+Unpickling the final model
+Prediction using Final Model {'bootstrap': True, 'ccp_alpha': 0.0, 'criterion': 'squared_error', 'max_depth': None, 'max_features': 8, 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 30, 'n_jobs': None, 'oob_score': False, 'random_state': 42, 'verbose': 0, 'warm_start': False}
+Prediction using Final Model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the  model
+Prediction using linear_reg_model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Decision Tree Regressor model
+Prediction using linear_reg_model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the RandomSearch RandomForest Regressor model
+Prediction using linear_reg_model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Linear Regressor model
+Prediction using linear_reg_model
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the  model
+Prediction using  
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Linear Regressor model
+Prediction using Linear Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the RandomSearch RandomForest Regressor model
+Prediction using RandomSearch RandomForest Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Decision Tree Regressor model
+Prediction using Decision Tree Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Linear Regressor model
+Prediction using Linear Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Decision Tree Regressor model
+Prediction using Decision Tree Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the RandomSearch RandomForest Regressor model
+Prediction using RandomSearch RandomForest Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the GridSearchCV RandomForest Regressor model
+Prediction using GridSearchCV RandomForest Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Linear Regressor model
+Prediction using Linear Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the Decision Tree Regressor model
+Prediction using Decision Tree Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the RandomSearch RandomForest Regressor model
+Prediction using RandomSearch RandomForest Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the GridSearchCV RandomForest Regressor model
+Prediction using GridSearchCV RandomForest Regressor 

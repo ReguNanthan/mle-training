@@ -27,6 +27,12 @@ from sklearn.compose import ColumnTransformer
 
 from sklearn.preprocessing import OneHotEncoder
 
+import mlflow
+
+import warnings
+
+warnings.filterwarnings("ignore")
+
 
 def parse_arguments():
     """Function to parse the arguments
@@ -335,6 +341,7 @@ def transform_data():
     housing_labels.to_csv(
         os.path.join(processed_path, "housing_labels.csv"), index=False
     )
+    mlflow.log_artifact(os.path.join(processed_path, "housing_labels.csv"))
 
     housing_num = housing.drop("ocean_proximity", axis=1)
 
@@ -387,6 +394,8 @@ def transform_data():
         os.path.join(processed_path, "housing_prepared.csv"), index=False
     )
 
+    mlflow.log_artifact(os.path.join(processed_path, "housing_prepared.csv"))
+
     X_test = strat_test_set.drop("median_house_value", axis=1)
     y_test = strat_test_set["median_house_value"].copy()
 
@@ -413,10 +422,19 @@ def transform_data():
     xtest_prepared.to_csv(
         os.path.join(processed_path, "xtest_prepared.csv"), index=False
     )
+
+    mlflow.log_artifact(os.path.join(processed_path, "xtest_prepared.csv"))
+
     y_test.to_csv(os.path.join(processed_path, "y_test_prepared.csv"), index=False)
+
+    mlflow.log_artifact(os.path.join(processed_path, "y_test_prepared.csv"))
 
     return True
 
 
-if __name__ == "__main__":
+def main():
     transform_data()
+
+
+if __name__ == "__main__":
+    main()
