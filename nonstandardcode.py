@@ -117,7 +117,7 @@ from sklearn.metrics import mean_squared_error
 housing_predictions = lin_reg.predict(housing_prepared)
 lin_mse = mean_squared_error(housing_labels, housing_predictions)
 lin_rmse = np.sqrt(lin_mse)
-print('model1',lin_rmse)
+print("model1", lin_rmse)
 
 
 from sklearn.metrics import mean_absolute_error
@@ -134,7 +134,7 @@ tree_reg.fit(housing_prepared, housing_labels)
 housing_predictions = tree_reg.predict(housing_prepared)
 tree_mse = mean_squared_error(housing_labels, housing_predictions)
 tree_rmse = np.sqrt(tree_mse)
-print('model2',tree_rmse)
+print("model2", tree_rmse)
 
 
 from scipy.stats import randint
@@ -214,9 +214,8 @@ X_test_cat = X_test[["ocean_proximity"]]
 X_test_prepared = X_test_prepared.join(pd.get_dummies(X_test_cat, drop_first=True))
 
 
-
 final_predictions = final_model.predict(X_test_prepared)
 final_mse = mean_squared_error(y_test, final_predictions)
 
 final_rmse = np.sqrt(final_mse)
-print('final model rmse',final_rmse)
+print("final model rmse", final_rmse)

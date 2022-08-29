@@ -15,7 +15,7 @@ from sklearn.model_selection import StratifiedShuffleSplit
 
 from sklearn.impute import SimpleImputer
 
-from logger import configure_logger
+from HousePricePrediction.logger import configure_logger
 
 from sklearn.base import BaseEstimator, TransformerMixin
 
@@ -26,6 +26,12 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.compose import ColumnTransformer
 
 from sklearn.preprocessing import OneHotEncoder
+
+import mlflow
+
+import warnings
+
+warnings.filterwarnings("ignore")
 
 
 def parse_arguments():
@@ -50,7 +56,7 @@ def parse_arguments():
         help="path to store the raw housing dataset",
         nargs="?",
         const=1,
-        default="data/raw",
+        default="data/raw/",
     )
     parser.add_argument(
         "processeddatasetpath",
@@ -90,6 +96,7 @@ def fetch_housing_data(housing_url, housing_path):
         True if successful, False otherwise.
 
     """
+    # housing_path = "data/raw"
     os.makedirs(housing_path, exist_ok=True)
     tgz_path = os.path.join(housing_path, "housing.tgz")
     urllib.request.urlretrieve(housing_url, tgz_path)
@@ -288,19 +295,11 @@ def transform_data():
         strat_train_set = housing.loc[train_index]
         strat_test_set = housing.loc[test_index]
 
-    logging.info("Downloading the strat_train_set and strat_test_set")
-    strat_train_set.to_csv(
-        os.path.join(processed_path, "strat_train_set.csv"), index=False
-    )
-    strat_test_set.to_csv(
-        os.path.join(processed_path, "strat_test_set.csv"), index=False
-    )
-
     train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
 
-    logging.info("Downloading the train_set and test_set")
-    train_set.to_csv(os.path.join(processed_path, "train_set.csv"), index=False)
-    test_set.to_csv(os.path.join(processed_path, "test_set.csv"), index=False)
+    # logging.info("Downloading the train_set and test_set")
+    # train_set.to_csv(os.path.join(processed_path, "train_set.csv"), index=False)
+    # test_set.to_csv(os.path.join(processed_path, "test_set.csv"), index=False)
 
     compare_props = pd.DataFrame(
         {
@@ -335,6 +334,7 @@ def transform_data():
     housing_labels.to_csv(
         os.path.join(processed_path, "housing_labels.csv"), index=False
     )
+    mlflow.log_artifact(os.path.join(processed_path, "housing_labels.csv"))
 
     housing_num = housing.drop("ocean_proximity", axis=1)
 
@@ -387,6 +387,8 @@ def transform_data():
         os.path.join(processed_path, "housing_prepared.csv"), index=False
     )
 
+    mlflow.log_artifact(os.path.join(processed_path, "housing_prepared.csv"))
+
     X_test = strat_test_set.drop("median_house_value", axis=1)
     y_test = strat_test_set["median_house_value"].copy()
 
@@ -413,10 +415,19 @@ def transform_data():
     xtest_prepared.to_csv(
         os.path.join(processed_path, "xtest_prepared.csv"), index=False
     )
+
+    mlflow.log_artifact(os.path.join(processed_path, "xtest_prepared.csv"))
+
     y_test.to_csv(os.path.join(processed_path, "y_test_prepared.csv"), index=False)
+
+    mlflow.log_artifact(os.path.join(processed_path, "y_test_prepared.csv"))
 
     return True
 
 
-if __name__ == "__main__":
+def main():
     transform_data()
+
+
+if __name__ == "__main__":
+    main()

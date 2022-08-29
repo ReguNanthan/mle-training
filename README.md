@@ -1,8 +1,8 @@
 # Median housing value prediction
 
-The housing data can be downloaded from https://raw.githubusercontent.com/ageron/handson-ml/master/. The script has codes to download the data. We have modelled the median house value on given housing data. 
+The housing data can be downloaded from https://raw.githubusercontent.com/ageron/handson-ml/master/. The script has codes to download the data. We have modelled the median house value on given housing data.
 
-The following techniques have been used: 
+The following techniques have been used:
 
  - Linear regression
  - Decision Tree
@@ -17,10 +17,20 @@ The following techniques have been used:
 ## To excute the script
 
 ## Use the env.yml file to create a conda environment
-conda env create -f env.yml -n new_env
+`conda env create -f env.yml -n new_env`
 
-## activate the environment
-conda activate new_env
-## Run the python file
-python nonstandardcode.py
+## Activate the environment
+`conda activate new_env`
 
+## Install the package by installing build distribution
+` pip install dist/HousePricePrediction-0.4.1-py3-none-any.whl ` or `pip install HousePricePrediction-0.4.1-py3-none-any.whl`
+
+## To check the successful installation of the package , run the below command
+` pytest tests/functional_tests/test_installation.py `
+
+
+## To create a MLFlow server, run the below command
+`mlflow server --backend-store-uri mlruns/  --default-artifact-root mlruns/ --host 0.0.0.0 --port 7000 `
+
+## To run the python script , run the below command
+`python src/HousePricePrediction/mlflow_run.py`
