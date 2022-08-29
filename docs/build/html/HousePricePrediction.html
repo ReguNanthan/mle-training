@@ -168,6 +168,27 @@
 </section>
 <section id="module-HousePricePrediction.ingest_data">
 <span id="housepriceprediction-ingest-data-module"></span><h2>HousePricePrediction.ingest_data module<a class="headerlink" href="#module-HousePricePrediction.ingest_data" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.CombinedAttributesAdder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">HousePricePrediction.ingest_data.</span></span><span class="sig-name descname"><span class="pre">CombinedAttributesAdder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add_bedrooms_per_room</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#CombinedAttributesAdder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.CombinedAttributesAdder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEstimator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TransformerMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.CombinedAttributesAdder.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#CombinedAttributesAdder.columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.CombinedAttributesAdder.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.CombinedAttributesAdder.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#CombinedAttributesAdder.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.CombinedAttributesAdder.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.CombinedAttributesAdder.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#CombinedAttributesAdder.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.CombinedAttributesAdder.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="HousePricePrediction.ingest_data.fetch_housing_data">
 <span class="sig-prename descclassname"><span class="pre">HousePricePrediction.ingest_data.</span></span><span class="sig-name descname"><span class="pre">fetch_housing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">housing_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#fetch_housing_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.fetch_housing_data" title="Permalink to this definition">¶</a></dt>
@@ -186,6 +207,24 @@
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.get_feature_names_from_column_transformer">
+<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.ingest_data.</span></span><span class="sig-name descname"><span class="pre">get_feature_names_from_column_transformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_trans</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#get_feature_names_from_column_transformer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.get_feature_names_from_column_transformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get feature names from a sklearn column transformer.</p>
+<p>The <cite>ColumnTransformer</cite> class in <cite>scikit-learn</cite> supports taking in a
+<cite>pd.DataFrame</cite> object and specifying <cite>Transformer</cite> operations on columns.
+The output of the <cite>ColumnTransformer</cite> is a numpy array that can used and
+does not contain the column names from the original dataframe. The class
+provides a <cite>get_feature_names</cite> method for this purpose that returns the
+column names corr. to the output array. Unfortunately, not all
+<cite>scikit-learn</cite> classes provide this method (e.g. <cite>Pipeline</cite>) and still
+being actively worked upon.</p>
+<blockquote>
+<div><p>NOTE: This utility function is a temporary solution until the proper fix is</p>
+</div></blockquote>
+<p>available in the <cite>scikit-learn</cite> library.</p>
 </dd></dl>
 
 <dl class="py function">
