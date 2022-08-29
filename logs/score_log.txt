@@ -152,3 +152,9 @@ Prediction using RandomSearch RandomForest Regressor
 Downloading the Xtest and Ytest from processed path folder
 Unpickling the GridSearchCV RandomForest Regressor model
 Prediction using GridSearchCV RandomForest Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the GridSearchCV RandomForest Regressor model
+Prediction using GridSearchCV RandomForest Regressor 
+Downloading the Xtest and Ytest from processed path folder
+Unpickling the RandomSearch RandomForest Regressor model
+Prediction using RandomSearch RandomForest Regressor 

@@ -1,6 +1,5 @@
 import argparse
-
-from logger import configure_logger
+from HousePricePrediction.logger import configure_logger
 import os
 import pickle
 
@@ -343,10 +342,10 @@ if __name__ == "__main__":
     log_file_path = args.logfile
     logging = configure_logger(log_file=log_file_path, console=False, log_level="INFO")
     main("")
-else:
-    args = parse_arguments()
-    processed_dataset_path = args.processed_dataset_path
-    Pickle_path = args.Pickle_path
-    log_file_path = args.logfile
-    logging = configure_logger(log_file=log_file_path, console=False, log_level="INFO")
-    # main("")
+# else:
+#     args = parse_arguments()
+#     processed_dataset_path = args.processed_dataset_path
+#     Pickle_path = args.Pickle_path
+#     log_file_path = args.logfile
+#     logging = configure_logger(log_file=log_file_path, console=False, log_level="INFO")
+#     # main("")

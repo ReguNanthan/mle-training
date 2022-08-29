@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import numpy as np
 
-from logger import configure_logger
+from HousePricePrediction.logger import configure_logger
 
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
