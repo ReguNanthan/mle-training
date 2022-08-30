@@ -11,5 +11,6 @@ src/HousePricePrediction/__init__.py
 src/HousePricePrediction/config_params.py
 src/HousePricePrediction/ingest_data.py
 src/HousePricePrediction/logger.py
+src/HousePricePrediction/mlflow_run.py
 src/HousePricePrediction/score.py
 src/HousePricePrediction/train.py

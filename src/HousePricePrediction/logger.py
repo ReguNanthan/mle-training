@@ -15,15 +15,16 @@ LOGGING_DEFAULT_CONFIG = {
         "default": {
             "format": "%(asctime)s - %(name)s - %(levelname)s - %(funcName)s:%(lineno)d - %(message)s",
             "datefmt": "%Y-%m-%d %H:%M:%S",
-        },
-        "simple": {"format": "%(message)s"},
+        }
+        # ,
+        # "simple": {"format": "%(message)s"},
     },
     "root": {"level": "DEBUG"},
 }
 
 
 def configure_logger(
-    logger=None, cfg=None, log_file=None, console=True, log_level="DEBUG"
+    logger=None, cfg=None, log_file=None, console=True, log_level="INFO"
 ):
     """Function to setup configurations of logger through function.
 

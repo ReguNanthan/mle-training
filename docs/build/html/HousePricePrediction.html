@@ -90,7 +90,7 @@
 <li><a class="reference internal" href="#module-HousePricePrediction.ingest_data">HousePricePrediction.ingest_data module</a></li>
 <li><a class="reference internal" href="#module-HousePricePrediction.logger">HousePricePrediction.logger module</a></li>
 <li><a class="reference internal" href="#module-HousePricePrediction.score">HousePricePrediction.score module</a></li>
-<li><a class="reference internal" href="#module-HousePricePrediction.train">HousePricePrediction.train module</a></li>
+<li><a class="reference internal" href="#housepriceprediction-train-module">HousePricePrediction.train module</a></li>
 <li><a class="reference internal" href="#module-HousePricePrediction">Module contents</a></li>
 </ul>
 </li>
@@ -168,6 +168,27 @@
 </section>
 <section id="module-HousePricePrediction.ingest_data">
 <span id="housepriceprediction-ingest-data-module"></span><h2>HousePricePrediction.ingest_data module<a class="headerlink" href="#module-HousePricePrediction.ingest_data" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.CombinedAttributesAdder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">HousePricePrediction.ingest_data.</span></span><span class="sig-name descname"><span class="pre">CombinedAttributesAdder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">add_bedrooms_per_room</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#CombinedAttributesAdder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.CombinedAttributesAdder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEstimator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">TransformerMixin</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.CombinedAttributesAdder.columns">
+<span class="sig-name descname"><span class="pre">columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#CombinedAttributesAdder.columns"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.CombinedAttributesAdder.columns" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.CombinedAttributesAdder.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#CombinedAttributesAdder.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.CombinedAttributesAdder.fit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.CombinedAttributesAdder.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#CombinedAttributesAdder.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.CombinedAttributesAdder.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="HousePricePrediction.ingest_data.fetch_housing_data">
 <span class="sig-prename descclassname"><span class="pre">HousePricePrediction.ingest_data.</span></span><span class="sig-name descname"><span class="pre">fetch_housing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">housing_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">housing_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#fetch_housing_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.fetch_housing_data" title="Permalink to this definition">¶</a></dt>
@@ -186,6 +207,24 @@
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.get_feature_names_from_column_transformer">
+<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.ingest_data.</span></span><span class="sig-name descname"><span class="pre">get_feature_names_from_column_transformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_trans</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#get_feature_names_from_column_transformer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.get_feature_names_from_column_transformer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get feature names from a sklearn column transformer.</p>
+<p>The <cite>ColumnTransformer</cite> class in <cite>scikit-learn</cite> supports taking in a
+<cite>pd.DataFrame</cite> object and specifying <cite>Transformer</cite> operations on columns.
+The output of the <cite>ColumnTransformer</cite> is a numpy array that can used and
+does not contain the column names from the original dataframe. The class
+provides a <cite>get_feature_names</cite> method for this purpose that returns the
+column names corr. to the output array. Unfortunately, not all
+<cite>scikit-learn</cite> classes provide this method (e.g. <cite>Pipeline</cite>) and still
+being actively worked upon.</p>
+<blockquote>
+<div><p>NOTE: This utility function is a temporary solution until the proper fix is</p>
+</div></blockquote>
+<p>available in the <cite>scikit-learn</cite> library.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -221,6 +260,11 @@
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="HousePricePrediction.ingest_data.main">
+<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.ingest_data.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/ingest_data.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.ingest_data.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="HousePricePrediction.ingest_data.parse_arguments">
@@ -303,15 +347,18 @@ default - <cite>“DEBUG”</cite></p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="HousePricePrediction.score.predict">
-<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.score.</span></span><span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/score.html#predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.score.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to predict the output and score</p>
+<dt class="sig sig-object py" id="HousePricePrediction.score.predict_score">
+<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.score.</span></span><span class="sig-name descname"><span class="pre">predict_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/score.html#predict_score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.score.predict_score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that predict and return the scores of a ML model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None</strong> – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model_name</strong> (<em>str</em>) – Name of the model that needs to evaluated.</p></li>
+<li><p><strong>model</strong> (<em>object</em>) – model object</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if successful, False otherwise.</p>
+<dd class="field-even"><p>Returns True if successful, otherwise False.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
@@ -320,42 +367,8 @@ default - <cite>“DEBUG”</cite></p></li>
 </dd></dl>
 
 </section>
-<section id="module-HousePricePrediction.train">
-<span id="housepriceprediction-train-module"></span><h2>HousePricePrediction.train module<a class="headerlink" href="#module-HousePricePrediction.train" title="Permalink to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="HousePricePrediction.train.parse_arguments">
-<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.train.</span></span><span class="sig-name descname"><span class="pre">parse_arguments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/train.html#parse_arguments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.train.parse_arguments" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to parse the arguments</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Returns the arguments that are added in the argument parser</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Args</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="HousePricePrediction.train.train_models">
-<span class="sig-prename descclassname"><span class="pre">HousePricePrediction.train.</span></span><span class="sig-name descname"><span class="pre">train_models</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/HousePricePrediction/train.html#train_models"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#HousePricePrediction.train.train_models" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to train the models.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None</strong> – </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if successful, False otherwise.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="housepriceprediction-train-module">
+<h2>HousePricePrediction.train module<a class="headerlink" href="#housepriceprediction-train-module" title="Permalink to this heading">¶</a></h2>
 </section>
 <section id="module-HousePricePrediction">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-HousePricePrediction" title="Permalink to this heading">¶</a></h2>

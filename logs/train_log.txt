@@ -30,3 +30,194 @@ Building DecisionTreeRegressor model
 Saving the DecisionTreeRegressor model
 Final model obtained using grid_search.best_estimator_
 Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Saving the RandomSearch_RandomForest_Model
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Saving the RandomSearch_RandomForest_Model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Saving the RandomSearch_RandomForest_Model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building Linear Regression model
+Saving the Linear Regression model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Building DecisionTreeRegressor model
+Saving the DecisionTreeRegressor model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Saving the RandomSearch_RandomForest_Model
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Retrying (Retry(total=4, connect=4, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc5b345b6d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=House_Price_Prediction
+Retrying (Retry(total=3, connect=3, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc5b3485220>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=House_Price_Prediction
+Retrying (Retry(total=2, connect=2, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc5b3485460>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=House_Price_Prediction
+Retrying (Retry(total=1, connect=1, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc5b34854f0>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=House_Price_Prediction
+Retrying (Retry(total=0, connect=0, read=5, redirect=5, status=5)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fc5b3481310>: Failed to establish a new connection: [Errno 111] Connection refused')': /api/2.0/mlflow/experiments/get-by-name?experiment_name=House_Price_Prediction
+Loading the housing labels data from csv
+Loading the housing prepared data from csv
+Final model obtained using grid_search.best_estimator_
+Saving the final model
+Loading the housing labels data from csv
+Loading the housing labels data from csv
+Loading the housing prepared data from csv

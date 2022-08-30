@@ -1,0 +1,16 @@
+artifact_uri: mlruns/1/dc493df58c6741ad9da0a97c865f43bf/artifacts
+deleted_time: null
+end_time: null
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: dc493df58c6741ad9da0a97c865f43bf
+run_uuid: dc493df58c6741ad9da0a97c865f43bf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1661336029968
+status: 1
+tags: []
+user_id: regu
