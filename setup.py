@@ -10,7 +10,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="HousePricePrediction",
-    version="0.4.1",
+    version="0.5.1",
     author="Regu Nanthan K",
     author_email="regunanthan.k@tigeranalytics.com",
     # package_dir={'': 'src/HousePricePrediction'},
